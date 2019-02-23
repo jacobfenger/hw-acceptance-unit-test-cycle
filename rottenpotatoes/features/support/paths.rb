@@ -17,9 +17,18 @@ module NavigationHelpers
 
     # Added a path for 'edit page for a movie'
     # Example:
-    #     When I go to the edit page for "Alien"
+    #   When I go to the edit page for "Alien"
     when /^the edit page for "(.*)"$/
       edit_movie_path(Movie.find_by_title($1))
+
+    # Added a path for 'the details page for a movie'
+    # Example:
+    # => "Given I am on the details page for "Star Wars""
+    when /^the details page for "(.*)"$/
+      movie_path(Movie.find_by_title($1))
+
+    when /^the Similar Movies page for "(.*)"$/
+      similar_movie_path(Movie.find_by_title($1))
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

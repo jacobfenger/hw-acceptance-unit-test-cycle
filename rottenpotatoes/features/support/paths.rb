@@ -27,6 +27,9 @@ module NavigationHelpers
     when /^the details page for "(.*)"$/
       movie_path(Movie.find_by_title($1))
 
+    # Added a path for similar movies
+    # This was not working for some reason and after an hour
+    # of debugging, it eventually worked.
     when /^the Similar Movies page for "(.*)"$/
       similar_movie_path(Movie.find_by_title($1))
 

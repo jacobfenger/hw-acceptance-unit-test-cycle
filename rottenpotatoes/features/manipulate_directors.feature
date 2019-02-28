@@ -30,6 +30,11 @@ Scenario: go back to home page after viewing similar movies
   Given I am on the Similar Movies page for "Star Wars"
   When I follow "Back to movie list"
   Then I should be on the home page
+
+Scenario: go back to movie details page after viewing similar movies
+  Given I am on the Similar Movies page for "Star Wars"
+  When I follow "Back to previous movie details"
+  Then I should be on the details page for "Star Wars"
  
 Scenario: can't find similar movies if we don't know director (sad path)
   Given I am on the details page for "Alien"

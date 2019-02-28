@@ -25,6 +25,11 @@ Scenario: find movie with same director
   Then  I should be on the Similar Movies page for "Star Wars"
   And   I should see "THX-1138"
   But   I should not see "Blade Runner"
+
+Scenario: go back to home page after viewing similar movies
+  Given I am on the Similar Movies page for "Star Wars"
+  When I follow "Back to movie list"
+  Then I should be on the home page
  
 Scenario: can't find similar movies if we don't know director (sad path)
   Given I am on the details page for "Alien"
